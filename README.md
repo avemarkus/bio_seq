@@ -15,7 +15,7 @@ The `bioseq` package is designed to facilitate bioinformatics operations on DNA 
 ### Filtering FASTQ Sequences
 
 ```python
-from bioseq.scripts.filter_fastq import filter_fastq
+from bioseq.scripts_stock.filter_fastq import filter_fastq
 
 fastq_sequences = {
     'seq1': ('AGCTAGCTAGAT', 'IIIIIIIIIIII'),
@@ -29,7 +29,7 @@ print(filtered)
 ### DNA/RNA operations
 
 ```python
-from bioseq.scripts.run_dna_rna_tools import run_dna_rna_tools
+from bioseq.scripts_stock.run_dna_rna_tools import run_dna_rna_tools
 
 result = run_dna_rna_tools('aUGc', 'transcribe')
 print(result)  # uACg
