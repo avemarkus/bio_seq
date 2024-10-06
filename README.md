@@ -1,7 +1,6 @@
-```markdown
 # bio_seq Package
 
-## Overview
+## Intro
 
 The `bioseq` package is designed to facilitate bioinformatics operations on DNA and RNA sequences. It contains tools for filtering fastq files and performing sequence operations.
 
