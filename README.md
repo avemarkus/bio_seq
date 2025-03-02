@@ -2,54 +2,72 @@
 
 ## Intro
 
-The `bioseq` package is designed to facilitate bioinformatics operations on DNA and RNA sequences. It contains tools for filtering fastq files and performing sequence operations.
-
+The `bioseq` package is designed to facilitate bioinformatics operations on DNA, RNA and amino acid sequences and provides a robust object-oriented framework for sequence manipulation.
+ 
 ## Features
 
 - **Filtering fastq sequences**
-- **Transcription, reversal and complementation of sequences**
-- **GC-persentage calculation**
+- **Operations on DNA and RNA sequences: transcription, complementation, reversal, reverse complementation, and GC content calculation**
+- **Analysis of aminoacid sequences, including hydrophobicity calculationn**
+
+
+Before usage ensure you have Python installed with the required dependencies (`biopython`, `numpy`):
+```bash
+pip install biopython numpy
+```
 
 ## Usage
 
 ### Filtering FASTQ Sequences
 
 ```python
-from bioseq.scripts_stock.filter_fastq import filter_fastq
 
-fastq_sequences = {
-    'seq1': ('AGCTAGCTAGAT', 'IIIIIIIIIIII'),
-    'seq2': ('GCGCGC', 'IIIIIIII')
-}
-
-filtered = filter_fastq(fastq_sequences, gc_bounds=(40, 60), length_bounds=(0, 100), quality_threshold=20)
-print(filtered)
+filtered = filter_fastq("example.fastq", gc_bounds=(40, 60), length_bounds=(50, 150), quality_threshold=20)
+if isinstance(filtered, dict):
+    for name, (seq, qual) in filtered.items():
+        print(f"ID: {name}, Seq: {seq[:10]}..., Quality: {qual[:10]}...")
+else:
+    print(filtered)
+    
 ```
 
 ### DNA/RNA operations
 
 ```python
-from bioseq.scripts_stock.run_dna_rna_tools import run_dna_rna_tools
+from bio_seq import DNASequence, RNASequence
 
-result = run_dna_rna_tools('aUGc', 'transcribe')
-print(result)  # uACg
+# DNA example
+dna = DNASequence("GATTACA")
+print(dna)                    # GATTACA
+print(dna.complement())       # CTAATGT
+print(dna.reverse())          # ACATTAG
+print(dna.reverse_complement()) # TGTAATC
+print(dna.count_gc())         # 28.57
+rna = dna.transcribe()
+print(rna)                    # GAUUACA
+
+# RNA example
+rna = RNASequence("AUGCGU")
+print(rna)                    # AUGCGU
+print(rna.complement())       # UACGCU
 ```
 
-### Additional functions
-
-You can also perform other operations such as `reverse`, `complement`, `reverse_complement`, and `count_GC` using the `run_dna_rna_tools` function.
+### Aminoacid operations
 
 ```python
-result = run_dna_rna_tools('ATGC', 'count_GC')
-print(result)  # 50.0
+from bio_seq import AminoAcidSequence
+
+protein = AminoAcidSequence("MILVFW")
+print(protein)                    # MILVFW
+print(protein.calculate_hydrophobicity())  # 2.72
 ```
 
 ## Conclusion
 
-This package can be enhanced with additional functionalities and more advanced features as needed.
+This bio_seq package now based an OOP approach, making bioinformatics analyses more modular and extensible nevertheless it can be enhanced with additional functionalities and more advanced features as needed.
 
-## P.S.
+## P.S.S.
 
-Guys, there were a lot of emergency situations. And they shot at me, and I fell into a puddle and remained there, because one good person gave us the task of creating this repository...
+Guys, I can't take it anymore...
 
-![:3](https://cs12.pikabu.ru/post_img/2020/10/29/11/160399913919458667.jpg)
+![:3](https://www.meme-arsenal.com/memes/ff70fc4d019a6fda321cf501f7b2ab32.jpg)
