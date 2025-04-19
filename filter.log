@@ -1,0 +1,24 @@
+2025-04-19 15:36:38,181 - INFO - Starting filtering of fastq file: /private/var/folders/8y/lpd58rc57495mk0nf4dsz2d80000gn/T/pytest-of-markkachanovskii/pytest-30/test_output_exists0/example_fastq.fastq
+2025-04-19 15:36:38,181 - INFO - Parameters: GC=(0, 100), Length=(0, 4294967296), Quality=0
+2025-04-19 15:36:38,193 - INFO - Filtered 4 sequences
+2025-04-19 15:36:38,194 - INFO - Starting filtering of fastq file: /private/var/folders/8y/lpd58rc57495mk0nf4dsz2d80000gn/T/pytest-of-markkachanovskii/pytest-30/test_quality_threshold_output0/example_fastq.fastq
+2025-04-19 15:36:38,195 - INFO - Parameters: GC=(0, 100), Length=(0, 4294967296), Quality=38
+2025-04-19 15:36:38,196 - INFO - Filtered 3 sequences
+2025-04-19 15:36:38,200 - INFO - Starting filtering of fastq file: /private/var/folders/8y/lpd58rc57495mk0nf4dsz2d80000gn/T/pytest-of-markkachanovskii/pytest-30/test_gc_bounds_filtering0/example_fastq.fastq
+2025-04-19 15:36:38,200 - INFO - Parameters: GC=(50.1, 100), Length=(0, 4294967296), Quality=0
+2025-04-19 15:36:38,200 - INFO - Filtered 3 sequences
+2025-04-19 15:36:38,201 - INFO - Starting filtering of fastq file: /private/var/folders/8y/lpd58rc57495mk0nf4dsz2d80000gn/T/pytest-of-markkachanovskii/pytest-30/test_length_bounds_filtering0/example_fastq.fastq
+2025-04-19 15:36:38,201 - INFO - Parameters: GC=(0, 100), Length=(5, 15), Quality=0
+2025-04-19 15:36:38,201 - INFO - Filtered 1 sequences
+2025-04-19 15:36:38,202 - INFO - Starting filtering of fastq file: /private/var/folders/8y/lpd58rc57495mk0nf4dsz2d80000gn/T/pytest-of-markkachanovskii/pytest-30/test_empty_result0/example_fastq.fastq
+2025-04-19 15:36:38,202 - INFO - Parameters: GC=(0, 100), Length=(0, 4294967296), Quality=100
+2025-04-19 15:36:38,202 - INFO - No sequences was found the filtering criteria.
+2025-04-19 15:36:38,203 - INFO - Starting filtering of fastq file: non_existent.fastq
+2025-04-19 15:36:38,203 - INFO - Parameters: GC=(0, 100), Length=(0, 4294967296), Quality=0
+2025-04-19 15:36:38,203 - ERROR - Fastq file 'non_existent.fastq' was not found
+2025-04-19 15:36:38,203 - INFO - Starting filtering of fastq file: /private/var/folders/8y/lpd58rc57495mk0nf4dsz2d80000gn/T/pytest-of-markkachanovskii/pytest-30/test_logging_output0/example_fastq.fastq
+2025-04-19 15:36:38,204 - INFO - Parameters: GC=(0, 100), Length=(0, 4294967296), Quality=0
+2025-04-19 15:36:38,204 - INFO - Filtered 4 sequences
+2025-04-19 15:36:38,204 - INFO - Starting filtering of fastq file: /private/var/folders/8y/lpd58rc57495mk0nf4dsz2d80000gn/T/pytest-of-markkachanovskii/pytest-30/test_invalid_fastq_format0/invalid_fastq.fastq
+2025-04-19 15:36:38,204 - INFO - Parameters: GC=(0, 100), Length=(0, 4294967296), Quality=0
+2025-04-19 15:36:38,204 - ERROR - Invalid format in /private/var/folders/8y/lpd58rc57495mk0nf4dsz2d80000gn/T/pytest-of-markkachanovskii/pytest-30/test_invalid_fastq_format0/invalid_fastq.fastq: Lengths of sequence and quality values differs for seq1 (4 and 2).
